@@ -342,7 +342,7 @@ const ManageAdmin = () => {
 
                                     <div className="row mt-1 ml-2">
                                         <div className="col-sm-6 ">
-                                            <ul class="pagination">
+                                            <ul className="pagination">
                                                 <span className="page-link mt-3" style={{ fontSize: '16px', marginLeft: 1 }}>count:  {total}</span>
                                             </ul>
                                         </div>

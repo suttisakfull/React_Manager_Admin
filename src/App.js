@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-import React,{ useEffect} from 'react'
+import React, { useEffect } from 'react'
 //Page
 import Register from "./components/pages/auth/Register";
 import Login from "./components/pages/auth/Login";
@@ -10,6 +10,7 @@ import Admin from "./components/pages/admin/Home";
 import User from "./components/pages/user/Home";
 
 import ManageAdmin from "./components/pages/admin/ManageAdmin"
+import CategoryAdmin from "./components/pages/admin/CreateCategory"
 
 
 
@@ -27,28 +28,28 @@ import AdminRoute from './components/layouts/routes/AdminRoute';
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-  const idtoken = localStorage.token;
-  if (idtoken) {
-  
-    currentUser(idtoken)
-      .then((res) => {
-        console.log(res.data)
-        dispatch({
-          type: 'LOGIN',
-          payload: {
-            token: idtoken,
-            username: res.data.username,
-            roles: res.data.roles
-          }
+  useEffect(() => {
+    const idtoken = localStorage.token;
+    if (idtoken) {
+
+      currentUser(idtoken)
+        .then((res) => {
+          console.log(res.data)
+          dispatch({
+            type: 'LOGIN',
+            payload: {
+              token: idtoken,
+              username: res.data.username,
+              roles: res.data.roles
+            }
+          })
+
         })
+        .catch((err) => {
 
-      })
-      .catch((err) => {
-
-      });
-  }
-},[dispatch])
+        });
+    }
+  }, [dispatch])
 
   return (
     <div className="App">
@@ -62,13 +63,21 @@ function App() {
         <Route path="/home" element={<Home />} />
 
         <Route path="/admin" element={     //dashboard
+
           <AdminRoute>
             <Admin />
           </AdminRoute>
         } />
-           <Route path="/ManageAdmin" element={
+
+        <Route path="/ManageAdmin" element={
           <AdminRoute>
             <ManageAdmin />
+          </AdminRoute>
+        } />
+
+        <Route path="/CategoryAdmin" element={
+          <AdminRoute>
+            <CategoryAdmin />
           </AdminRoute>
         } />
 
