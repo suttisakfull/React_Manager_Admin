@@ -122,15 +122,13 @@ const CreateCategory = () => {
     }
 
     const CategoryForm_Create = (values) => {
-
         // console.log("Category_Create:: ", values)
-
         setLoading(true);
         setTimeout(() => {
             form.resetFields();
             setLoading(false);
         }, 1000);
-        create_category(values)
+        create_category( user.token,values)
             .then(res => {
                 console.log(res.data);
                 toast.success(res.data, { position: "top-center", autoClose: 2000 })
@@ -193,7 +191,7 @@ const CreateCategory = () => {
                     <div className="container-fluid">
                         <div className="row mb-2">
                             <div className="col-sm-6">
-                                <h1 className="m-0"> จัดการหมวดหมู่สินค้า:</h1>
+                                <h1 className="m-0"> จัดการหมวดหมู่อุปกรณ์</h1>
                             </div>
                             <div className="col-sm-6">
                                 <ol className="breadcrumb float-sm-right">

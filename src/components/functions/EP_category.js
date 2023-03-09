@@ -1,7 +1,12 @@
 import axios from 'axios'
 
-export const create_category = async ( value) =>
-  await axios.post(process.env.REACT_APP_API + "/category/create", value);
+export const create_category = async ( authtoken,value) =>
+  await axios.post(process.env.REACT_APP_API + "/category/create", value,
+  {
+    headers: {
+      authtoken
+    }
+  });
 
   
 export const paginate_category = async (authtoken,pages,limit) =>  
