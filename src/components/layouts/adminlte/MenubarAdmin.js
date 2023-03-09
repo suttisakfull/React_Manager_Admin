@@ -32,7 +32,7 @@ const MenubarAdmin = () => {
                                 <li className="nav-item">
                                     <Link to="/CategoryAdmin" className="nav-link">
                                         <i className="far fa-circle nav-icon" />
-                                        <p>หมวดหมู่สินค้า:</p>
+                                        <p>หมวดหมู่อุปกรณ์:</p>
                                     </Link>
                                 </li>
 

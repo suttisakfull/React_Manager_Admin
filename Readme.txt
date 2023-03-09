@@ -18,3 +18,7 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/suttisakfull/React_Manager_Admin.git
 git push -u origin main
+
+npm i react-toastify
+npm install react-bootstrap bootstrap
+https://fontawesome.com/v5/icons/trash-alt?s=solid&f=classic

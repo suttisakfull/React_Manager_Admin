@@ -9,14 +9,13 @@ import { useSelector } from 'react-redux';
 //ant design
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import { Switch, Spin, message, Select, Tag, Modal, Button, Space, Row, Col } from 'antd';
-
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Form, Input, Card } from 'antd';
 
-// import Register from '../auth/Register'
 
 // day/mount/year
 import moment from 'moment/min/moment-with-locales'
+import { toast } from 'react-toastify';
 
 // functions list_users,
 import { changeStatus_users, changeRoles_users, remove_users, resetPassword_users, paginate_users } from "../../functions/EP_users"
@@ -48,7 +47,6 @@ const ManageAdmin = () => {
     //====================================
 
     let page_num = 1;
-
     const page_one = 1;
     const limit = 10;
 
@@ -247,26 +245,29 @@ const ManageAdmin = () => {
             setLoading(false);
         }, 2000);
 
-        console.log("P1: ", values.password)
-        console.log("P2: ", values.password_)
+        // console.log("P1: ", values.password)
+        // console.log("P2: ", values.password_)
 
         if(values.password !== values.password_){
             setTimeout(() => {
                 // message.error('Password not match !!!')
-                alert('Password not match !!!')
+                // alert('Password not match !!!')
+                toast.error('Password not match !!!',{position: "top-center"})
             }, 3000)
         }else{
             register(values)
             .then(res=>{
                 console.log(res.data);
-                alert(res.data)
+                // alert(res.data)
+                toast.success(res.data,{position: "top-center"})
                 loadData(user.token)
 
                 // Redirect(res.data);
             })
             .catch(err=>{
                 // console.log(err.response.data)
-                 alert(err.response.data)
+                //  alert(err.response.data)
+                toast.error(err.response.data,{position: "top-center"})
                 setTimeout(() => {
                     // message.error(err.response.data)
                 }, 3000)

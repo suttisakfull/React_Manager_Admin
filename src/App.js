@@ -25,6 +25,10 @@ import { useDispatch } from 'react-redux';
 import UserRoute from './components/layouts/routes/UserRoute';
 import AdminRoute from './components/layouts/routes/AdminRoute';
 
+// Toast
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -55,6 +59,7 @@ function App() {
     <div className="App">
       {/* <h1>Hello React</h1> */}
       {/* <Register/> */}
+      <ToastContainer/>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
