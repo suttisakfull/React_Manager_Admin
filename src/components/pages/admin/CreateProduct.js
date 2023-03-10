@@ -17,17 +17,18 @@ import { Spin, Button, Space, Row, Col } from 'antd';
 import { Form, Input, Card, Popconfirm } from 'antd';
 
 //function
-import {create_product} from "../../functions/EP_product";
+import {create_product,list_product} from "../../functions/EP_product";
 
 const init_state ={
     title: "",
     description: "",
+    categories: [],
     category: "",
     price: "",
     quatity: "",
     images: []
 };
-
+   
 
 const CreateProduct = () => {
 
@@ -37,6 +38,8 @@ const CreateProduct = () => {
     
 
     const [form] = Form.useForm();
+
+    
     const ProductForm_Create = (values) =>{
         // console.log("Data_Product: ",values)
         create_product(user.token,values)
@@ -119,7 +122,6 @@ const CreateProduct = () => {
 
                                                     + เพิ่มหมวดหมู่สินค้า
                                                 </button>
-
                                             </ol>
                                         </div>
                                     </div>

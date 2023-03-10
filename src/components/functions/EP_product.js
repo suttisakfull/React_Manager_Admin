@@ -7,3 +7,12 @@ export const create_product = async ( authtoken,value) =>
       authtoken
     }
   });
+
+  export const list_product = async (authtoken) =>  
+  await axios.get(process.env.REACT_APP_API+'/product/list',
+     {
+       headers: {
+         authtoken
+       }
+     });
+ 

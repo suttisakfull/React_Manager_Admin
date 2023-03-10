@@ -232,7 +232,6 @@ const CreateBranch = () => {
 
                                                     + เพิ่มสาขาในสังกัด
                                                 </button>
-
                                             </ol>
                                         </div>
                                     </div>

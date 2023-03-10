@@ -43,12 +43,12 @@ const MenubarAdmin = () => {
                                     </Link>
                                 </li>
                                 {/* ProductAdmin */}
-                                {/* <li className="nav-item">
+                                <li className="nav-item">
                                     <Link to="/ProductAdmin" className="nav-link">
                                         <i className="far fa-circle nav-icon" />
                                         <p>หมวดหมู่สินค้า:</p>
                                     </Link>
-                                </li> */}
+                                </li>
 
                             </ul>
                         </li>
