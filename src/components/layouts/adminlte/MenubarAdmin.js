@@ -35,6 +35,20 @@ const MenubarAdmin = () => {
                                         <p>หมวดหมู่อุปกรณ์:</p>
                                     </Link>
                                 </li>
+                                {/* BranchAmdin */}
+                                <li className="nav-item">
+                                    <Link to="/BranchAmdin " className="nav-link">
+                                        <i className="far fa-circle nav-icon" />
+                                        <p>หมวดหมู่สาขา:</p>
+                                    </Link>
+                                </li>
+                                {/* ProductAdmin */}
+                                {/* <li className="nav-item">
+                                    <Link to="/ProductAdmin" className="nav-link">
+                                        <i className="far fa-circle nav-icon" />
+                                        <p>หมวดหมู่สินค้า:</p>
+                                    </Link>
+                                </li> */}
 
                             </ul>
                         </li>

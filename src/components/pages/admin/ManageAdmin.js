@@ -324,10 +324,10 @@ const ManageAdmin = () => {
                             <section className="col-lg-12 connectedSortable">
                                 <div className="card">
                                     <div className="card-header bg-info">
-                                        <h3 className="card-title">
+                                        <h3 className="card-title pt-2">
                                             {/* <i className="fas fa-address-card mr-2 mt-2" /> */}
-                                            <i class="fas fa-users mr-2 mt-1 mb-1"></i>
-                                            ตารางผู้ใช้งานทั้งหมด
+                                            <i class="fas fa-users mr-2 ">  ตารางผู้ใช้งานทั้งหมด</i>
+                                            
                                         </h3>
                                         <div className="card-tools">
 
@@ -361,13 +361,13 @@ const ManageAdmin = () => {
 
                                         <Spin spinning={loading}>
 
-                                            <table className="table table-light table-striped " >
-                                                <thead style={{ fontSize: '14px' }}>
+                                            <table className="table  table-striped " >
+                                                <thead style={{ fontSize: '14px' }} className="bg-dark">
                                                     <tr>
                                                         {/* <th scope="col">id:</th> */}
                                                         <th scope="col">Name</th>
-                                                        <th scope="col">Roles</th>
-                                                        <th scope="col">Status</th>
+                                                        <th scope="col" style={{ textAlign: "left" }}>Roles</th>
+                                                        <th scope="col" style={{ textAlign: "left" }}>Status</th>
                                                         {/* <th scope="col">Time</th> */}
                                                         <th scope="col">Created</th>
                                                         <th scope="col">Updated</th>

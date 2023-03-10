@@ -171,6 +171,7 @@ const CreateCategory = () => {
                 // console.log("Page_num: ", page_num)
                 // console.log("Page_limit: ", limit)
                 page_paginate(user.token, page_num, limit)
+                toast.success("Edit Success", { position: "top-center", autoClose: 2000 })
 
 
             }).catch(err => {
@@ -203,16 +204,18 @@ const CreateCategory = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <section className="content">
                     <div className="container-fluid">
                         <div className="row">
                             <section className="col-lg-12 connectedSortable">
                                 <div className="card">
                                     <div className="card-header bg-info">
-                                        <h3 className="card-title">
+                                        <h3 className="card-title pt-2">
                                             {/* <i className="fas fa-address-card mr-2 mt-2" /> */}
-                                            <i className="fas fa-users mr-2 mt-1 mb-1"></i>
-                                            ตารางหมวดหมู่อุปกรณ์ทั้งหมด
+                                            <i className="fas fa-users mr-2">  ตารางหมวดหมู่อุปกรณ์ทั้งหมด</i>
+                                           
                                         </h3>
                                         <div className="card-tools">
 
@@ -222,6 +225,7 @@ const CreateCategory = () => {
                                         </div>
 
                                     </div>
+                                      {/* ===================================================== */}
                                     <div className="row mt-1 ml-2">
                                         <div className="col-sm-6 ">
                                             <ul className="pagination">
@@ -244,6 +248,7 @@ const CreateCategory = () => {
                                             </ol>
                                         </div>
                                     </div>
+                                      {/* ===================================================== */}
 
 
                                     <div className="card-body " style={{ margin: 'auto', marginTop: -30, width: '60%' }}>
@@ -251,17 +256,19 @@ const CreateCategory = () => {
 
                                         <Spin spinning={loading}>
 
-                                            <table className="table table-light table-striped " >
-                                                <thead style={{ fontSize: '14px' }}>
-                                                    <tr>
-                                                        <th scope="col" style={{ textAlign: "center" }}>Name</th>
+                                            <table className="table  table-striped " >
+                                                <thead style={{ fontSize: '14px' }} className="bg-dark">
+                                                    <tr >
+                                                        <th scope="col" style={{ textAlign: "left", paddingLeft: '10%' }}>#</th>
+                                                        <th scope="col" style={{ textAlign: "left", paddingLeft: '20%' }}>Name</th>
                                                         <th scope="col" style={{ textAlign: "center" }}>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {data.map((item, index) => (
                                                         <tr key={index}>
-                                                            <td style={{ textAlign: "center" }}>{item.name}</td>
+                                                            <td style={{ textAlign: "left", paddingLeft: '10%' }}>{index+1}</td>
+                                                            <td style={{ textAlign: "left", paddingLeft: '20%' }}>{item.name}</td>
                                                             <td style={{ textAlign: "center" }}>
                                                                 {/* <EditOutlined style={{ fontSize: '20px', color: "blue", }}/> */}
                                                                 <a>
@@ -289,7 +296,7 @@ const CreateCategory = () => {
                                             </table>
                                         </Spin>
                                     </div>
-
+                                      {/* ===================================================== */}
 
                                     <div
                                         style={{
@@ -434,14 +441,20 @@ const CreateCategory = () => {
                                                             <Col span={6}>
 
                                                             </Col>
-                                                            <Space direction='horizontal' style={{ paddingLeft: 490, marginTop: -10 }}>
+                                                           
+                                                            <Space direction='horizontal' style={{    marginTop: -10 }}>
+                                                             
+                                                          
                                                                 <Button danger onClick={clearForm} block size={'large'}>
                                                                     Clear
                                                                 </Button>
                                                                 <Button type="primary" ghost htmlType="submit" block size={'large'}>
                                                                     OK
                                                                 </Button>
+                                                              
+                                                                
                                                             </Space>
+                                                           
                                                         </Row>
                                                     </Form.Item>
                                                 </Space>
@@ -459,15 +472,6 @@ const CreateCategory = () => {
                 </div>
 
             </div>
-
-
-       
-
-
-
-
-
-
             <Footer />
         </div>
     )

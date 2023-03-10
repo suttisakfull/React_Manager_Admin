@@ -11,6 +11,8 @@ import User from "./components/pages/user/Home";
 
 import ManageAdmin from "./components/pages/admin/ManageAdmin"
 import CategoryAdmin from "./components/pages/admin/CreateCategory"
+import ProductAdmin  from "./components/pages/admin/CreateProduct"
+import BranchAmdin from "./components/pages/admin/CreateBranch"
 
 
 
@@ -83,6 +85,18 @@ function App() {
         <Route path="/CategoryAdmin" element={
           <AdminRoute>
             <CategoryAdmin />
+          </AdminRoute>
+        } />
+        {/* ProductAdmin */}
+        <Route path="/ProductAdmin" element={
+          <AdminRoute>
+            <ProductAdmin/>
+          </AdminRoute>
+        } />
+        {/* BranchAmdin  */}
+        <Route path="/BranchAmdin" element={
+          <AdminRoute>
+            <BranchAmdin/>
           </AdminRoute>
         } />
 
