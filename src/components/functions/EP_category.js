@@ -8,6 +8,14 @@ export const create_category = async ( authtoken,value) =>
     }
   });
 
+export const list_category = async (authtoken) =>  
+  await axios.get(process.env.REACT_APP_API+'/category/list',
+     {
+       headers: {
+         authtoken
+       }
+     });
+
   
 export const paginate_category = async (authtoken,pages,limit) =>  
 await axios.get(process.env.REACT_APP_API+`/category/pages/${pages}/${limit}`,

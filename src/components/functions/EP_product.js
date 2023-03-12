@@ -15,4 +15,6 @@ export const create_product = async ( authtoken,value) =>
          authtoken
        }
      });
+
+
  

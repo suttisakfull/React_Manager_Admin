@@ -242,20 +242,24 @@ const CreateBranch = () => {
                                             <table className="table  table-striped " >
                                                 <thead style={{ fontSize: '14px' }} className="bg-dark">
                                                     <tr>
-                                                        <th scope="col" style={{ textAlign: "left" }}>#</th>
-                                                        <th scope="col" style={{ textAlign: "left" }}>Name</th>
-                                                        <th scope="col" style={{ textAlign: "left" }}>BA</th>
+                                                        {/* <th scope="col" style={{ textAlign: "left" }}>#</th> */}
                                                         <th scope="col" style={{ textAlign: "left" }}>Code</th>
+                                                        <th scope="col" style={{ textAlign: "left" }}>BA</th>
+                                                        <th scope="col" style={{ textAlign: "left" }}>Name</th>
+                                                        
+                                                  
                                                         <th scope="col" style={{ textAlign: "center" }}>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {data.map((item, index) => (
                                                         <tr key={index}>
-                                                            <td style={{ textAlign: "left" }}>{index + 1}</td>
-                                                            <td style={{ textAlign: "left" }}>{item.name}</td>
-                                                            <td style={{ textAlign: "left" }}>{item.ba}</td>
+                                                            {/* <td style={{ textAlign: "left" }}>{index + 1}</td> */}
                                                             <td style={{ textAlign: "left" }}>{item.code}</td>
+                                                            <td style={{ textAlign: "left" }}>{item.ba}</td>
+                                                            <td style={{ textAlign: "left" }}>{item.name}</td>
+                                                           
+                                                          
                                                             <td style={{ textAlign: "center" }}>
                                                                 <a> <i   onClick={() => { handleEditShow(setDataEdit(item), setEditId(item._id)) }} ><EditOutlined style={{ fontSize: '20px', color: "blue", }}/></i></a>
 

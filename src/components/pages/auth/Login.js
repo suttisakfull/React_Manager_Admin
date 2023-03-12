@@ -111,7 +111,7 @@ const Login = () => {
                         // actions={[<WindowsOutlined />]}
                         type="info"
                         style={{ width: 450, marginTop: '5px' }}
-                        headStyle={{ backgroundColor: '#11DFFF', color: 'black', paddingLeft: "180px", fontSize: '18px' }}
+                        headStyle={{ backgroundColor: '#0dcaf0', color: 'black', paddingLeft: "180px", fontSize: '18px' }}
                         // headStyle={{ backgroundColor: '#ffd375', color: 'black' }}                    
                         bodyStyle={{ height: 220, backgroundColor: '#fafafa' }}
                     >
