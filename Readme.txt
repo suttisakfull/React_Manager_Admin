@@ -22,3 +22,5 @@ git push -u origin main
 npm i react-toastify
 npm install react-bootstrap bootstrap
 https://fontawesome.com/v5/icons/trash-alt?s=solid&f=classic
+
+npm i react-image-file-resizer
