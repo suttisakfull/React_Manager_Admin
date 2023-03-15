@@ -9,13 +9,9 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 //Ant Design
-import {
-    MenuUnfoldOutlined,
-    DeleteOutlined,
-    EditOutlined,
-} from "@ant-design/icons";
-import { Spin, Button, Space, Row, Col } from "antd";
-import { Form, Input, Card, Select, Popconfirm } from "antd";
+
+import { Spin, Avatar,Badge } from "antd";
+
 
 //function
 import { create_product } from "../../functions/EP_product";
@@ -38,6 +34,8 @@ const CreateProduct = () => {
     const { user } = useSelector((state) => ({ ...state }));
     const [values, setvalues] = useState(init_state);
     const [loading, setLoading] = useState(false);
+    const [pictureload, setpictureload] = useState(false)
+ 
 
     const [validated, setValidated] = useState(false);
     const formRef = useRef(null);
@@ -99,7 +97,12 @@ const CreateProduct = () => {
                     <div className="container-fluid">
                         <div className="row mb-2">
                             <div className="col-sm-6">
-                                <h1 className="m-0"> จัดการหมวดหมู่สินค้า:</h1>
+                                {
+                                  pictureload    
+                                  ?  <h1>Loading...<Spin /></h1> //ture
+                                  :  <h1 className="m-0"> จัดการหมวดหมู่สินค้า:</h1>//false
+                                }
+                               
                             </div>
                             <div className="col-sm-6">
                                 <ol className="breadcrumb float-sm-right">
@@ -205,28 +208,15 @@ const CreateProduct = () => {
                                                                 onChange={handleChange}
                                                             />
                                                         </div>
-                                                        {/* <label for="exampleInputFile">File input</label>
-                                                    <div className="input-group">
-                                                        <div className="custom-file">
-                                                            <input
-                                                                type="file"
-                                                                className="custom-file-input"
-                                                                id="exampleInputFile"
+                                                        
+                                                        <FileUpload 
+                                                        pictureload={pictureload}
+                                                        setpictureload={setpictureload}
+                                                        values={values} 
+                                                        setvalues={setvalues} 
 
-                                                            />
-                                                            <label
-                                                                className="custom-file-label "
-                                                                htmlFor="exampleInputFile"
-                                                            >
-                                                                Choose file
-                                                            </label>
-                                                        </div>
-                                                        <div className="input-group-append">
-                                                            <span className="input-group-text">Upload</span>
-                                                        </div>
-
-                                                    </div> */}
-                                                        <FileUpload values={values} setvalues={setvalues} />
+                                                     
+                                                        />
 
                                                     </div>
                                                 </div>
