@@ -5,11 +5,31 @@ import MenubarAdmin from '../../layouts/adminlte/MenubarAdmin';
 import Footer from '../../layouts/adminlte/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { useSelector } from 'react-redux';
 
 
+//function
 
-const home = () => {
-  
+import {list_product} from '../../functions/EP_product'
+
+const Home = () => {
+  const { user } = useSelector((state) => ({ ...state }))
+  const [product, setProduct] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() =>{
+    loadData(user.token,3)
+  },[])
+
+  const loadData= (authtoken,count) =>{
+    list_product(authtoken,count)
+    .then(res=>{
+       console.log(res.data)
+    }).catch(err =>{
+      console.log(err)
+
+    })
+  }
   return (
     <div>
       <Header />
@@ -46,4 +66,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home

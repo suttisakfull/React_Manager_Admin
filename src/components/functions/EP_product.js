@@ -8,8 +8,8 @@ export const create_product = async ( authtoken,value) =>
     }
   });
 
-  export const list_product = async (authtoken) =>  
-  await axios.get(process.env.REACT_APP_API+'/product/list',
+  export const list_product = async (authtoken,count) =>  
+  await axios.get(process.env.REACT_APP_API+'/product/list/'+count,
      {
        headers: {
          authtoken
