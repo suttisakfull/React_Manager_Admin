@@ -11,7 +11,7 @@ import User from "./components/pages/user/Home";
 
 import ManageAdmin from "./components/pages/admin/ManageAdmin"
 import CategoryAdmin from "./components/pages/admin/CreateCategory"
-import ProductAdmin  from "./components/pages/admin/CreateProduct"
+import ProductAdmin from "./components/pages/admin/CreateProduct"
 import BranchAmdin from "./components/pages/admin/CreateBranch"
 
 
@@ -28,14 +28,22 @@ import UserRoute from './components/layouts/routes/UserRoute';
 import AdminRoute from './components/layouts/routes/AdminRoute';
 
 // Toast
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
+// import useMqtt from '../src/components/mqtt/useMqtt'
+
 
 function App() {
   const dispatch = useDispatch();
+  // const { mqttSubscribe, isConnected, payload } = useMqtt();
 
+
+ 
   useEffect(() => {
     const idtoken = localStorage.token;
+    // MqttConnect();
     if (idtoken) {
 
       currentUser(idtoken)
@@ -57,11 +65,30 @@ function App() {
     }
   }, [dispatch])
 
+  // useEffect(() => {
+  //   if (isConnected) {
+  //     mqttSubscribe('iot/TEST01/sensor');
+  //   }
+  // }, [isConnected]);
+  // useEffect(() => {
+  //   if (payload.message
+  //     && ['iot/TEST01/sensor'].includes(payload.topic)
+  //   ) {
+  //     const newMessage = JSON.parse(payload.message);
+  //     console.log('Mess: ', newMessage);
+  //     // const notif = [...notificationList, newMessage]
+  //     // setNotificationList(notif)
+  //     // new Notification(newMessage.content);
+  //   }
+  // }, [payload])
+
+
+
   return (
     <div className="App">
       {/* <h1>Hello React</h1> */}
       {/* <Register/> */}
-      <ToastContainer/>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -90,13 +117,13 @@ function App() {
         {/* ProductAdmin */}
         <Route path="/ProductAdmin" element={
           <AdminRoute>
-            <ProductAdmin/>
+            <ProductAdmin />
           </AdminRoute>
         } />
         {/* BranchAmdin  */}
         <Route path="/BranchAmdin" element={
           <AdminRoute>
-            <BranchAmdin/>
+            <BranchAmdin />
           </AdminRoute>
         } />
 
